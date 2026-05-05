@@ -1,0 +1,9 @@
+langchain 
+langchain_community 
+langchain_core 
+langchain_openai 
+langchain_mongodb 
+langchain_voyage
+langchain-text-splitters
+pymongo
+pypdf
