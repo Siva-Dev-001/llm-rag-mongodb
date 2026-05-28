@@ -1,5 +1,6 @@
 from langchain_mongodb import MongoDBAtlasVectorSearch
 from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
@@ -43,8 +44,12 @@ def query_data(query):
         "question": RunnablePassthrough()
         }
 
-    llm = ChatOpenAI(openai_api_key=key_param.LLM_API_KEY, temperature=0, model="gpt-5.5")
-
+    # llm = ChatOpenAI(openai_api_key=key_param.LLM_API_KEY, temperature=0, model="gpt-5.5")
+    llm = ChatGoogleGenerativeAI(
+    google_api_key=key_param.GEMINI_API_KEY,
+    model="gemini-3.5-flash",
+    temperature=0,
+    )
     response_parser = StrOutputParser()
 
     rag_chain = (

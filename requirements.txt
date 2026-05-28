@@ -1,7 +1,8 @@
 langchain 
 langchain_community 
 langchain_core 
-langchain_openai 
+langchain_openai
+langchain-google-genai 
 langchain_mongodb 
 langchain_voyage
 langchain-text-splitters
